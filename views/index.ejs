@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title><%= title %></title>
+  <!-- CSS  -->
+  <link href="http://cdn.bootcss.com/materialize/0.97.5/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <ul class="collection with-header">
+      <li class="collection-header center"><h4>训练鹰眼</h4></li>
+      <% news.forEach(function(n,i){ %>
+      <% if(n.rate>0){%>
+      <li class="collection-item"><div><a href="<%=n.href%>" class="red-text"><%=n.title %></a><a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <%}else if(n.rate<0){%>
+      <li class="collection-item"><div><a href="<%=n.href%>" class="green-text"><%=n.title %></a><a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <% }else{ %>
+        <li class="collection-item"><div><a href="<%=n.href%>" class="grey-text text-darken-4"><%=n.title %></a><a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <%}}) %>
+
+  </ul>
+  <!--  Scripts-->
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/materialize/0.97.5/js/materialize.min.js"></script>
   </body>
 </html>
