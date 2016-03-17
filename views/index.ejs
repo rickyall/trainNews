@@ -13,11 +13,33 @@
       <li class="collection-header center"><h4>训练鹰眼</h4></li>
       <% news.forEach(function(n,i){ %>
       <% if(n.rate>0){%>
-      <li class="collection-item"><div><a href="<%=n.href%>" class="red-text"><%=n.title %></a><a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item">
+        <div><a href="<%=n.href%>" class="red-text"><%=n.title %></a>
+          <br>
+          <div style ="text-align:right">
+            <a href="<%=n.id+'/correctNews/1' %>" ><small>正面</small></a>
+            <a href="<%=n.id+'/correctNews/-1' %>"><small>负面</small></a>
+            <a href="<%=n.id+'/correctNews/0' %>"><small>中性</small></a>
+          </div>
+      </li>
       <%}else if(n.rate<0){%>
-      <li class="collection-item"><div><a href="<%=n.href%>" class="green-text"><%=n.title %></a><a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+      <li class="collection-item"><div><a href="<%=n.href%>" class="green-text"><%=n.title %></a>
+          <br>
+          <div  style ="text-align:right">
+            <a href="<%=n.id+'/correctNews/1' %>" ><small>正面</small></a>
+            <a href="<%=n.id+'/correctNews/-1' %>"><small>负面</small></a>
+            <a href="<%=n.id+'/correctNews/0' %>"><small>中性</small></a>
+          </div>
+      </div></li>
       <% }else{ %>
-        <li class="collection-item"><div><a href="<%=n.href%>" class="grey-text text-darken-4"><%=n.title %></a><a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+        <li class="collection-item"><div><a href="<%=n.href%>" class="grey-text text-darken-4"><%=n.title %></a>
+          <br>
+          <div  style ="text-align:right">
+            <a href="<%=n.id+'/correctNews/1' %>" ><small>正面</small></a>
+            <a href="<%=n.id+'/correctNews/-1' %>"><small>负面</small></a>
+            <a href="<%=n.id+'/correctNews/0' %>"><small>中性</small></a>
+          </div>
+        </div></li>
       <%}}) %>
 
   </ul>
